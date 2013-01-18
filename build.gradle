@@ -1,0 +1,24 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+version = "1.0-SNAPSHOT"
+group = "net.spantree.elasticsearch.script"
+
+project.targetCompatibility = 1.6
+project.sourceCompatibility = 1.6
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.elasticsearch:elasticsearch:0.19.8"
+	
+	testCompile "org.codehaus.groovy:groovy:1.8.6"
+	
+	testCompile("org.spockframework:spock-spring:0.6-groovy-1.8") {
+		exclude module: 'groovy-all'
+	}
+}
+
