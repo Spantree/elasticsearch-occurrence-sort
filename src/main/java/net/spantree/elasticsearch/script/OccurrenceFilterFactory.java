@@ -7,9 +7,9 @@ import org.elasticsearch.common.Nullable;
 import org.elasticsearch.script.ExecutableScript;
 import org.elasticsearch.script.NativeScriptFactory;
 
-public class OccurrenceSortFactory implements NativeScriptFactory {
+public class OccurrenceFilterFactory implements NativeScriptFactory {
 	public ExecutableScript newScript(@Nullable Map<String, Object> params) {
 		List<UnixTimeInterval> intervals = OccurrenceParameterParser.parseIntervals(params);
-		return new OccurrenceSortScript(intervals);
+		return new OccurrenceFilterScript(intervals);
 	}
 }
